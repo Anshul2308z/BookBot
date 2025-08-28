@@ -16,4 +16,21 @@ def charCount(string):
                     dict[char] += 1 ;
                 else :
                     dict[char] = 1 ;
-    print(dict);
+    return dict;
+
+def sort_on(items):
+    return items["num"] ;
+
+
+def charSorter(dict):
+    toReturn = [] ; 
+    for char in dict :
+        toReturn.append({"char": char, "num": dict[char]});
+    
+    toReturn.sort(reverse=True,key =sort_on); 
+    #sort_on is a helper function passed to sort() via the key= argument. Python calls it on each list 
+    #element, using its return value to determine sorting order.
+
+    return toReturn ; 
+
+
